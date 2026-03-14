@@ -1,0 +1,17 @@
+name: Satya CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Hello from Houston!
+        run: echo "Bhai Satya! CI pipeline chal gaya 🚀 Time: $(date) User: $GITHUB_ACTOR"
+      - name: Check Node version (example)
+        run: node --version || echo "Node nahi hai, but CI chal raha hai!"
